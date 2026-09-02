@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art's Em Forro | Revestimentos e Decoração</title>
+    <meta name="description" content="Especialistas em Forro PVC, Painel Ripado em WPC e Painel Flexível em WPC. Soluções modernas para o seu ambiente.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #c9953a;
+            --primary-hover: #b07d2b;
+            --dark: #121212;
+            --dark-surface: #1e1e1e;
+            --light: #f9f9f9;
+            --gray: #666666;
+            --border: #eeeeee;
+            --whatsapp: #25d366;
+            --whatsapp-hover: #1ebd5a;
+            --font: 'Montserrat', sans-serif;
+            --radius: 12px;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font);
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo { font-size: 24px; font-weight: 800; color: var(--dark); text-transform: uppercase; letter-spacing: -0.5px; }
+        .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        .btn-header-wpp {
+            background: var(--whatsapp);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-header-wpp:hover { background: var(--whatsapp-hover); color: white; }
+
+        /* Hero */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920') center/cover;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #dddddd;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(201, 149, 58, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Portfolio */
+        .portfolio { padding: 100px 0; background: white; }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 50px;
+            font-size: 16px;
+        }
+
+        /* Main Tabs */
+        .tabs-header {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            font-family: var(--font);
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover { background: #f0f0f0; }
+
+        .tab-btn.active {
+            background: var(--dark);
+            color: white;
+            border-color: var(--dark);
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s ease; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sub Tabs (within Painel Flexivel) */
+        .sub-tabs-header {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .sub-tab-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 30px;
+            font-family: var(--font);
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sub-tab-btn:hover { background: #fdf8f0; }
+
+        .sub-tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .sub-tab-content { display: none; }
+        .sub-tab-content.active { display: block; animation: fadeIn 0.5s ease; }
+
+        /* Line separator */
+        .line-separator {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray);
+            margin: 40px 0 30px;
+            position: relative;
+        }
+
+        .line-separator::before,
+        .line-separator::after {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 1px;
+            background: var(--border);
+            vertical-align: middle;
+            margin: 0 12px;
+        }
+
+        /* Specs Box */
+        .specs-box {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .specs-box h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .spec-item { display: flex; flex-direction: column; }
+
+        .spec-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--gray);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .spec-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+        }
+
+        .product-image-wrapper {
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(18, 18, 18, 0.82);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 6px 10px;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            background: #e9e9e9;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.04);
+        }
+
+        /* Thumbnails */
+        .thumbs {
+            display: flex;
+            gap: 6px;
+            padding: 8px 12px;
+            background: #f5f5f5;
+            overflow-x: auto;
+        }
+
+        .thumbs img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s;
+            flex-shrink: 0;
+        }
+
+        .thumbs img.active { border-color: var(--primary); }
+        .thumbs img:hover { border-color: var(--primary-hover); }
+
+        .product-info {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-tag {
+            font-size: 12px;
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 20px;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--dark);
+            color: var(--dark);
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font);
+            font-size: 14px;
+        }
+
+        .btn-outline:hover {
+            background: var(--dark);
+            color: white;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .lightbox.active { display: flex; }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px; right: 30px;
+            color: white;
+            font-size: 36px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        /* Location */
+        .location {
+            padding: 100px 0;
+            background: var(--dark);
+            color: white;
+        }
+
+        .location .section-title { color: white; }
+        .location .section-subtitle { color: #aaaaaa; }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .contact-info { display: flex; flex-direction: column; gap: 30px; }
+
+        .contact-item { display: flex; align-items: flex-start; gap: 15px; }
+
+        .contact-icon {
+            background: rgba(201, 149, 58, 0.2);
+            color: var(--primary);
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 { font-size: 18px; margin-bottom: 5px; }
+        .contact-text p, .contact-text a { color: #cccccc; font-size: 16px; transition: color 0.3s; }
+        .contact-text a:hover { color: var(--primary); }
+
+        .map-container {
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .map-container iframe { width: 100%; height: 100%; border: none; }
+
+        /* Footer */
+        footer {
+            background: #111111;
+            color: #666666;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+        }
+
+        /* Floating WhatsApp */
+        .wpp-float {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            background: var(--whatsapp);
+            color: white;
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+
+        .wpp-float:hover { transform: scale(1.1); }
+        .wpp-float svg { width: 32px; height: 32px; fill: currentColor; }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .location-content { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 32px; }
+            .tabs-header, .sub-tabs-header { flex-direction: column; }
+            .tab-btn, .sub-tab-btn { width: 100%; text-align: center; }
+            .product-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">Art's Em <span>Forro</span></a>
+            <nav class="nav-links">
+                <a href="#portfolio">Portfólio</a>
+                <a href="#localizacao">Localização</a>
+                <a href="https://www.instagram.com/artsemforro?igsi=N3hibjc5eDF0cjdy" target="_blank">Instagram</a>
+                <a href="https://wa.me/557131797478?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." class="btn-header-wpp" target="_blank">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.316 1.592 5.548 0 10.063-4.514 10.066-10.066.002-2.69-1.047-5.216-2.951-7.121-1.905-1.904-4.432-2.951-7.113-2.952-5.549 0-10.066 4.515-10.068 10.068-.001 2.028.528 3.661 1.566 5.3l-.994 3.634 3.737-.981zm12.381-6.118c-.33-.165-1.951-.963-2.251-1.072-.3-.109-.518-.165-.736.165-.218.329-.844 1.072-1.036 1.291-.19.217-.383.244-.713.079-.33-.165-1.393-.513-2.653-1.637-.98-.874-1.643-1.953-1.835-2.282-.19-.33-.02-.508.145-.671.149-.148.33-.384.495-.577.165-.191.22-.329.33-.548.11-.22.055-.412-.028-.577-.082-.165-.736-1.771-1.009-2.428-.266-.64-.538-.553-.736-.563-.19-.01-.408-.012-.627-.012-.218 0-.573.082-.873.411-.3.33-1.145 1.118-1.145 2.727s1.173 3.16 1.336 3.379c.164.22 2.308 3.52 5.59 4.94 1.15.497 2.046.793 2.746.992.802.256 1.532.22 2.11.134.64-.095 1.951-.797 2.224-1.538.273-.741.273-1.373.191-1.503-.082-.13-.3-.207-.63-.372z"/></svg>
+                    WhatsApp
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Transforme seus ambientes com sofisticação.</h1>
+            <p>Especialistas em Forro PVC, Painel Ripado e Painel Flexível em WPC. Soluções de alto padrão com instalação prática e acabamento impecável.</p>
+            <a href="https://wa.me/557131797478?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento." class="btn btn-primary" target="_blank">Solicitar Orçamento</a>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Nosso Portfólio</h2>
+            <p class="section-subtitle">Conheça nossa linha completa de revestimentos e escolha o ideal para o seu projeto.</p>
+
+            <!-- Main Tabs -->
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="openTab(event, 'forro-pvc')">Forro PVC</button>
+                <button class="tab-btn" onclick="openTab(event, 'painel-ripado')">Painel Ripado WPC</button>
+                <button class="tab-btn" onclick="openTab(event, 'painel-flexivel')">Painel Flexível WPC</button>
+            </div>
+
+            <!-- ==================== FORRO PVC ==================== -->
+            <div id="forro-pvc" class="tab-content active">
+                <div class="specs-box">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        Vantagens do Forro PVC
+                    </h4>
+                    <p style="color: var(--gray); font-size: 15px;">Acabamento limpo, resistente à umidade, fácil manutenção e instalação rápida. Ideal para residências e espaços comerciais.</p>
+                </div>
+
+                <div class="product-grid">
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper" onclick="openLightbox('assents img/forro-pvc/forro-pvc-branco.jpg')">
+                            <span class="product-badge">Forro PVC</span>
+                            <img src="assents img/forro-pvc/forro-pvc-branco.jpg" alt="Forro PVC Branco" class="product-img" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">Revestimento de Teto</span>
+                            <h3 class="product-title">Forro PVC Branco</h3>
+                            <div class="product-price">Consulte o m²</div>
+                            <button class="btn-outline" onclick="pedirOrcamento('Forro PVC Branco')">Fazer Orçamento</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper" onclick="openLightbox('assents img/forro-pvc/forro-pvc-branco-junta-seca.webp')">
+                            <span class="product-badge">Forro PVC</span>
+                            <img src="assents img/forro-pvc/forro-pvc-branco-junta-seca.webp" alt="Forro PVC Branco Junta Seca" class="product-img" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">Revestimento de Teto</span>
+                            <h3 class="product-title">Forro PVC Branco Junta Seca</h3>
+                            <div class="product-price">Consulte o m²</div>
+                            <button class="btn-outline" onclick="pedirOrcamento('Forro PVC Branco Junta Seca')">Fazer Orçamento</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper" onclick="openLightbox('assents img/forro-pvc/forro-pvc-amadeirado-ipe.jpg')">
+                            <span class="product-badge">Forro PVC</span>
+                            <img src="assents img/forro-pvc/forro-pvc-amadeirado-ipe.jpg" alt="Forro Amadeirado Ipê" class="product-img" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">Revestimento de Teto</span>
+                            <h3 class="product-title">Forro Amadeirado Ipê</h3>
+                            <div class="product-price">Consulte o m²</div>
+                            <button class="btn-outline" onclick="pedirOrcamento('Forro Amadeirado Ipê')">Fazer Orçamento</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper" onclick="openLightbox('assents img/forro-pvc/forro-pvc-amadeirado-carvalho.jpg')">
+                            <span class="product-badge">Forro PVC</span>
+                            <img src="assents img/forro-pvc/forro-pvc-amadeirado-carvalho.jpg" alt="Forro Amadeirado Carvalho" class="product-img" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">Revestimento de Teto</span>
+                            <h3 class="product-title">Forro Amadeirado Carvalho</h3>
+                            <div class="product-price">Consulte o m²</div>
+                            <button class="btn-outline" onclick="pedirOrcamento('Forro Amadeirado Carvalho')">Fazer Orçamento</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ==================== PAINEL RIPADO ==================== -->
+            <div id="painel-ripado" class="tab-content">
+                <div class="specs-box">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                        Especificações Técnicas
+                    </h4>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">Dimensões da Placa</span>
+                            <span class="spec-value">2,90m x 0,16m</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Espessura</span>
+                            <span class="spec-value">24 mm</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Material</span>
+                            <span class="spec-value">WPC (Wood Plastic Composite)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-grid">
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-ripado/ripado-sarja-cinza.jpg')">
+                            <span class="product-badge">Painel Ripado</span>
+                            <img src="assents img/painel-ripado/ripado-sarja-cinza.jpg" alt="Painel Ripado Sarja Cinza" class="product-img" loading="lazy">
+                        </div>
+                        <div class="thumbs">
+                            <img src="assents img/painel-ripado/ripado-sarja-cinza.jpg" onclick="swapImage(this, 'assents img/painel-ripado/ripado-sarja-cinza.jpg')" class="active" alt="Sarja Cinza 1">
+                            <img src="assents img/painel-ripado/ripado-sarja-cinza2.jpg" onclick="swapImage(this, 'assents img/painel-ripado/ripado-sarja-cinza2.jpg')" alt="Sarja Cinza 2">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">Revestimento de Parede</span>
+                            <h3 class="product-title">Painel Ripado Sarja Cinza</h3>
+                            <div class="product-price">Consulte o valor da placa</div>
+                            <button class="btn-outline" onclick="pedirOrcamento('Painel Ripado Sarja Cinza')">Fazer Orçamento</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-ripado/ripado-sarja-gold1.jpg')">
+                            <span class="product-badge">Painel Ripado</span>
+                            <img src="assents img/painel-ripado/ripado-sarja-gold1.jpg" alt="Painel Ripado Sarja Gold" class="product-img" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">Revestimento de Parede</span>
+                            <h3 class="product-title">Painel Ripado Sarja Gold</h3>
+                            <div class="product-price">Consulte o valor da placa</div>
+                            <button class="btn-outline" onclick="pedirOrcamento('Painel Ripado Sarja Gold')">Fazer Orçamento</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-ripado/ripado-carvalho.jpg')">
+                            <span class="product-badge">Painel Ripado</span>
+                            <img src="assents img/painel-ripado/ripado-carvalho.jpg" alt="Painel Ripado Carvalho" class="product-img" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-tag">Revestimento de Parede</span>
+                            <h3 class="product-title">Painel Ripado Carvalho</h3>
+                            <div class="product-price">Consulte o valor da placa</div>
+                            <button class="btn-outline" onclick="pedirOrcamento('Painel Ripado Carvalho')">Fazer Orçamento</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ==================== PAINEL FLEXÍVEL ==================== -->
+            <div id="painel-flexivel" class="tab-content">
+                <div class="specs-box">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        Especificações Técnicas
+                    </h4>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">Tamanho e Rendimento</span>
+                            <span class="spec-value">2,90 m x 1,20 m — 3,48 m² por painel</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Espessura</span>
+                            <span class="spec-value">5 mm</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Peso</span>
+                            <span class="spec-value">4,00 kg/m²</span>
+                        </div>
+                        <div class="spec-item" style="grid-column: 1 / -1;">
+                            <span class="spec-label">Composição</span>
+                            <span class="spec-value">Base de PVC com pó de bambu + impressão UV texturizada + camada protetora PETG 0,3 mm (brilho ou fosco) + filme de proteção para transporte.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub Tabs -->
+                <div class="sub-tabs-header">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'linha-amadeirada')">Linha Amadeirada</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'linha-contemporanea')">Linha Contemporânea</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'linha-marmorizada')">Linha Marmorizada</button>
+                </div>
+
+                <!-- ===== Linha Amadeirada ===== -->
+                <div id="linha-amadeirada" class="sub-tab-content active">
+                    <div class="product-grid">
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/amadeirada/painel-amadeirado-freijo.jpg')">
+                                <span class="product-badge">Amadeirada</span>
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-freijo.jpg" alt="Painel Flexível Amadeirado Freijó" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-freijo.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/amadeirada/painel-amadeirado-freijo.jpg')" class="active" alt="Freijó 1">
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-freijo1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/amadeirada/painel-amadeirado-freijo1.jpg')" alt="Freijó 2">
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-freijo3.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/amadeirada/painel-amadeirado-freijo3.jpg')" alt="Freijó 3">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Amadeirado Freijó</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Amadeirado Freijó')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/amadeirada/painel-amadeirado-amendoa1.jpg')">
+                                <span class="product-badge">Amadeirada</span>
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-amendoa1.jpg" alt="Painel Flexível Amadeirado Amêndoa" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-amendoa1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/amadeirada/painel-amadeirado-amendoa1.jpg')" class="active" alt="Amêndoa 1">
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-amendoa2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/amadeirada/painel-amadeirado-amendoa2.jpg')" alt="Amêndoa 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Amadeirado Amêndoa</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Amadeirado Amêndoa')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/amadeirada/painel-amadeirado-jacaranda1.jpg')">
+                                <span class="product-badge">Amadeirada</span>
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-jacaranda1.jpg" alt="Painel Flexível Amadeirado Jacarandá" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-jacaranda1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/amadeirada/painel-amadeirado-jacaranda1.jpg')" class="active" alt="Jacarandá 1">
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-jacaranda2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/amadeirada/painel-amadeirado-jacaranda2.jpg')" alt="Jacarandá 2">
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-jacaranda3.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/amadeirada/painel-amadeirado-jacaranda3.jpg')" alt="Jacarandá 3">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Amadeirado Jacarandá</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Amadeirado Jacarandá')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/amadeirada/painel-amadeirado-carvalho1.jpg')">
+                                <span class="product-badge">Amadeirada</span>
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-carvalho1.jpg" alt="Painel Flexível Amadeirado Carvalho" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-carvalho1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/amadeirada/painel-amadeirado-carvalho1.jpg')" class="active" alt="Carvalho 1">
+                                <img src="assents img/painel-flexivel/amadeirada/painel-amadeirado-carvalho2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/amadeirada/painel-amadeirado-carvalho2.jpg')" alt="Carvalho 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Amadeirado Carvalho</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Amadeirado Carvalho')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ===== Linha Contemporânea ===== -->
+                <div id="linha-contemporanea" class="sub-tab-content">
+                    <div class="product-grid">
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/contemporanea/painel-conteporaneo-jateado-decor1.jpg')">
+                                <span class="product-badge">Contemporânea</span>
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-jateado-decor1.jpg" alt="Painel Flexível Contemporâneo Jateado Art Decor" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-jateado-decor1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/contemporanea/painel-conteporaneo-jateado-decor1.jpg')" class="active" alt="Jateado 1">
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-jateado-decor2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/contemporanea/painel-conteporaneo-jateado-decor2.jpg')" alt="Jateado 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Contemporâneo Jateado Art Decor</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Contemporâneo Jateado Art Decor')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/contemporanea/painel-conteporaneo-line-gold1.jpg')">
+                                <span class="product-badge">Contemporânea</span>
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-line-gold1.jpg" alt="Painel Flexível Contemporâneo Line Gold" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-line-gold1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/contemporanea/painel-conteporaneo-line-gold1.jpg')" class="active" alt="Line Gold 1">
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-line-gold2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/contemporanea/painel-conteporaneo-line-gold2.jpg')" alt="Line Gold 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Contemporâneo Line Gold</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Contemporâneo Line Gold')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-gold1.jpg')">
+                                <span class="product-badge">Contemporânea</span>
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-gold1.jpg" alt="Painel Flexível Contemporâneo Poligonal Gold" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-gold1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-gold1.jpg')" class="active" alt="Poligonal Gold 1">
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-gold2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-gold2.jpg')" alt="Poligonal Gold 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Contemporâneo Poligonal Gold</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Contemporâneo Poligonal Gold')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-azul1.jpg')">
+                                <span class="product-badge">Contemporânea</span>
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-azul1.jpg" alt="Painel Flexível Contemporâneo Poligonal Azul" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-azul1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-azul1.jpg')" class="active" alt="Poligonal Azul 1">
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-azul2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-azul2.jpg')" alt="Poligonal Azul 2">
+                                <img src="assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-azul3.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/contemporanea/painel-conteporaneo-poligonal-azul3.jpg')" alt="Poligonal Azul 3">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Contemporâneo Poligonal Azul</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Contemporâneo Poligonal Azul')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ===== Linha Marmorizada ===== -->
+                <div id="linha-marmorizada" class="sub-tab-content">
+                    <div class="product-grid">
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-gold1.jpg')">
+                                <span class="product-badge">Marmorizada</span>
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-gold1.jpg" alt="Painel Flexível Marmorizado Calacata Gold" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-gold1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-gold1.jpg')" class="active" alt="Calacata Gold 1">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-gold2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-gold2.jpg')" alt="Calacata Gold 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Marmorizado Calacata Gold</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Marmorizado Calacata Gold')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-cinza1.jpg')">
+                                <span class="product-badge">Marmorizada</span>
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-cinza1.jpg" alt="Painel Flexível Marmorizado Calacata Cinza" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-cinza1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-cinza1.jpg')" class="active" alt="Calacata Cinza 1">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-cinza2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-cinza2.jpg')" alt="Calacata Cinza 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Marmorizado Calacata Cinza</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Marmorizado Calacata Cinza')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-oro1.jpg')">
+                                <span class="product-badge">Marmorizada</span>
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-oro1.jpg" alt="Painel Flexível Marmorizado Calacata Oro" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-oro1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-oro1.jpg')" class="active" alt="Calacata Oro 1">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-oro2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-calacata-oro2.jpg')" alt="Calacata Oro 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Marmorizado Calacata Oro</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Marmorizado Calacata Oro')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/marmorizada/painel-marmorizado-onyx-blue1.jpg')">
+                                <span class="product-badge">Marmorizada</span>
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-onyx-blue1.jpg" alt="Painel Flexível Marmorizado Onyx Blue" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-onyx-blue1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-onyx-blue1.jpg')" class="active" alt="Onyx Blue 1">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-onyx-blue2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-onyx-blue2.jpg')" alt="Onyx Blue 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Marmorizado Onyx Blue</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Marmorizado Onyx Blue')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/marmorizada/painel-marmorizado-onyx-black1.jpg')">
+                                <span class="product-badge">Marmorizada</span>
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-onyx-black1.jpg" alt="Painel Flexível Marmorizado Onyx Black" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-onyx-black1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-onyx-black1.jpg')" class="active" alt="Onyx Black 1">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-onyx-black2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-onyx-black2.jpg')" alt="Onyx Black 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Marmorizado Onyx Black</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Marmorizado Onyx Black')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/marmorizada/painel-marmorizado-bianco-damme1.jpg')">
+                                <span class="product-badge">Marmorizada</span>
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-bianco-damme1.jpg" alt="Painel Flexível Marmorizado Bianco Damme" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-bianco-damme1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-bianco-damme1.jpg')" class="active" alt="Bianco Damme 1">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-bianco-damme2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-bianco-damme2.jpg')" alt="Bianco Damme 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Marmorizado Bianco Damme</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Marmorizado Bianco Damme')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/marmorizada/painel-marmorizado-nero-maquina1.jpg')">
+                                <span class="product-badge">Marmorizada</span>
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-nero-maquina1.jpg" alt="Painel Flexível Marmorizado Nero Máquina" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-nero-maquina1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-nero-maquina1.jpg')" class="active" alt="Nero Máquina 1">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-nero-maquina2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-nero-maquina2.jpg')" alt="Nero Máquina 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Marmorizado Nero Máquina</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Marmorizado Nero Máquina')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/marmorizada/painel-marmorizado-roma-imperial1.jpg')">
+                                <span class="product-badge">Marmorizada</span>
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-roma-imperial1.jpg" alt="Painel Flexível Marmorizado Roma Imperial" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-roma-imperial1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-roma-imperial1.jpg')" class="active" alt="Roma Imperial 1">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-roma-imperial2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-roma-imperial2.jpg')" alt="Roma Imperial 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Marmorizado Roma Imperial</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Marmorizado Roma Imperial')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/marmorizada/painel-marmorizado-azul-paladium1.jpg')">
+                                <span class="product-badge">Marmorizada</span>
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-azul-paladium1.jpg" alt="Painel Flexível Marmorizado Paladium Azul" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-azul-paladium1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-azul-paladium1.jpg')" class="active" alt="Paladium Azul 1">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-azul-paladium2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-azul-paladium2.jpg')" alt="Paladium Azul 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Marmorizado Paladium Azul</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Marmorizado Paladium Azul')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/marmorizada/painel-marmorizado-port-laurent1.jpg')">
+                                <span class="product-badge">Marmorizada</span>
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-port-laurent1.jpg" alt="Painel Flexível Marmorizado Port Laurent" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-port-laurent1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-port-laurent1.jpg')" class="active" alt="Port Laurent 1">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-port-laurent2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-port-laurent2.jpg')" alt="Port Laurent 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Marmorizado Port Laurent</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Marmorizado Port Laurent')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper" onclick="openLightbox('assents img/painel-flexivel/marmorizada/painel-marmorizado-por-laurent-black1.jpg')">
+                                <span class="product-badge">Marmorizada</span>
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-por-laurent-black1.jpg" alt="Painel Flexível Marmorizado Port Laurent Black" class="product-img" loading="lazy">
+                            </div>
+                            <div class="thumbs">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-por-laurent-black1.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-por-laurent-black1.jpg')" class="active" alt="Port Laurent Black 1">
+                                <img src="assents img/painel-flexivel/marmorizada/painel-marmorizado-por-laurent-black2.jpg" onclick="swapImage(this, 'assents img/painel-flexivel/marmorizada/painel-marmorizado-por-laurent-black2.jpg')" alt="Port Laurent Black 2">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">Painel Flexível WPC</span>
+                                <h3 class="product-title">Marmorizado Port Laurent Black</h3>
+                                <div class="product-price">Consulte o valor da placa</div>
+                                <button class="btn-outline" onclick="pedirOrcamento('Painel Flexível Marmorizado Port Laurent Black')">Fazer Orçamento</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Location -->
+    <section id="localizacao" class="location">
+        <div class="container">
+            <h2 class="section-title">Nossa Loja</h2>
+            <p class="section-subtitle" style="margin-bottom: 40px;">Venha nos visitar e conhecer a qualidade dos nossos materiais de perto.</p>
+
+            <div class="location-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Endereço</h4>
+                            <p>Avenida General San Martin, 330</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Telefones</h4>
+                            <p>Fixo: (71) 3389-7478<br>WhatsApp: (71) 3179-7478</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Instagram</h4>
+                            <a href="https://www.instagram.com/artsemforro?igsi=N3hibjc5eDF0cjdy" target="_blank">@artsemforro</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=Avenida%20general%20san%20martin,%20330&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Art's Em Forro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/557131797478?text=Olá,%20vim%20pelo%20site%20da%20Art's%20Em%20Forro%20e%20gostaria%20de%20atendimento." class="wpp-float" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.316 1.592 5.548 0 10.063-4.514 10.066-10.066.002-2.69-1.047-5.216-2.951-7.121-1.905-1.904-4.432-2.951-7.113-2.952-5.549 0-10.066 4.515-10.068 10.068-.001 2.028.528 3.661 1.566 5.3l-.994 3.634 3.737-.981zm12.381-6.118c-.33-.165-1.951-.963-2.251-1.072-.3-.109-.518-.165-.736.165-.218.329-.844 1.072-1.036 1.291-.19.217-.383.244-.713.079-.33-.165-1.393-.513-2.653-1.637-.98-.874-1.643-1.953-1.835-2.282-.19-.33-.02-.508.145-.671.149-.148.33-.384.495-.577.165-.191.22-.329.33-.548.11-.22.055-.412-.028-.577-.082-.165-.736-1.771-1.009-2.428-.266-.64-.538-.553-.736-.563-.19-.01-.408-.012-.627-.012-.218 0-.573.082-.873.411-.3.33-1.145 1.118-1.145 2.727s1.173 3.16 1.336 3.379c.164.22 2.308 3.52 5.59 4.94 1.15.497 2.046.793 2.746.992.802.256 1.532.22 2.11.134.64-.095 1.951-.797 2.224-1.538.273-.741.273-1.373.191-1.503-.082-.13-.3-.207-.63-.372z"/></svg>
+    </a>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img src="" id="lightbox-img" alt="Imagem ampliada">
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Main tabs
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            var activeTab = document.getElementById(tabName);
+            activeTab.style.display = "block";
+            setTimeout(() => { activeTab.classList.add("active"); }, 10);
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Sub tabs (within Painel Flexivel)
+        function openSubTab(evt, subTabName) {
+            var i, subcontent, sublinks;
+            subcontent = document.getElementsByClassName("sub-tab-content");
+            for (i = 0; i < subcontent.length; i++) {
+                subcontent[i].style.display = "none";
+                subcontent[i].classList.remove("active");
+            }
+            sublinks = document.getElementsByClassName("sub-tab-btn");
+            for (i = 0; i < sublinks.length; i++) {
+                sublinks[i].classList.remove("active");
+            }
+            var activeSub = document.getElementById(subTabName);
+            activeSub.style.display = "block";
+            setTimeout(() => { activeSub.classList.add("active"); }, 10);
+            evt.currentTarget.classList.add("active");
+        }
+
+        // WhatsApp orcamento
+        function pedirOrcamento(produto) {
+            const numero = "557131797478";
+            const mensagem = `Olá, gostaria de solicitar um orçamento para o produto: ${produto}.`;
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+
+        // Swap main image when clicking thumbnail
+        function swapImage(thumb, newSrc) {
+            var card = thumb.closest('.product-card');
+            var mainImg = card.querySelector('.product-img');
+            var thumbs = card.querySelectorAll('.thumbs img');
+            mainImg.src = newSrc;
+            thumbs.forEach(function(t) { t.classList.remove('active'); });
+            thumb.classList.add('active');
+        }
+
+        // Lightbox
+        function openLightbox(src) {
+            var lb = document.getElementById('lightbox');
+            var lbImg = document.getElementById('lightbox-img');
+            lbImg.src = src;
+            lb.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Close lightbox with Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
